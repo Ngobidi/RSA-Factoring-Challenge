@@ -2,28 +2,26 @@
 import sys
 
 
-def factorize(numb):
-    """
-    Generate 2 factors of a specified number
-    """
-    factor_A = 2
-    while (numb % factor_A):
-        if (factor_A <= numb):
-            factor_A += 1
+def factorize(num):
+    """ Generate 2 factors for a given number"""
+    factor1 = 2
+    while (num % factor1):
+        if (factor1 <= num):
+            factor1 += 1
 
-    factor_B = numb// factor_A
-    return (factor_B, factor_A)
+    factor2 = num // factor1
+    return (factor2, factor1)
 
 
 if len(sys.argv) != 2:
     sys.exit(f"Wrong usage: {sys.argv[0]} <file_path>")
 
-f_name = sys.argv[1]
+filename = sys.argv[1]
 
-file = open(f_name, 'r')
-statement = file.readstatement()
+file = open(filename, 'r')
+lines = file.readlines()
 
-for line in statement:
-    numb = int(line.rstrip())
-    factor_B, factor_A = factorize(numb)
-    print(f"{num} = {factor_B} * {factor_A}")
+for line in lines:
+    num = int(line.rstrip())
+    factor2, factor1 = factorize(num)
+    print(f"{num} = {factor2} * {factor1}")

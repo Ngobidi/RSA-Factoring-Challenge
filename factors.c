@@ -2,22 +2,22 @@
 
 int main()
 {
-    long long int numb = 239809320265259;
-    long int factor_A = 2;
-    long int factor_B;
+    long long int num = 239809320265259;
+    long int factor1 = 2;
+    long int factor2;
 
-    while (numb % factor_A)
+    while (num % factor1)
     {
-        if (factor_A <= numb)
+        if (factor1 <= num)
         {
-            factor_A++;
+            factor1++;
         }
         else {
             return (-1);
         }
     }
 
-    factor_B = numb / factor_A;
-    printf("%lld = %ld * %ld\n", numb, factor_B, factor_A);
+    factor2 = num / factor1;
+    printf("%lld = %ld * %ld\n", num, factor2, factor1);
     return (0);
 }

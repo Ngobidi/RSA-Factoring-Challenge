@@ -1,31 +1,29 @@
 #!/usr/bin/python3
-"""
-factorize a define set of num in a file products of two small numb
-"""
+"""factorize given set of numbers in a file to product of two small numbers"""
 from sys import argv
 
 
-def factorize(num_to_validate):
-    """"search two small num which multiply to produce a specified num"""
-    j = 2
+def factorize(number_to_check):
+    """"find two small numbers that multiply to give a given number"""
+    i = 2
 
-    if num_to_validate < 2:
+    if number_to_check < 2:
         return
     
-    while num_to_validate % j:
-        j += 1
-    print("{:.0f}={:.0f}*{:.0f}".format(num_to_validate, num_to_validate / j, j))
+    while number_to_check % i:
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(number_to_check, number_to_check / i, i))
 
 if len(argv) != 2:
     exit()
 
 try:
     with open(argv[1]) as file:
-        line_1 = file.readline()
+        line = file.readline()
 
-        while line_1 != "":
-            num_to_validate = int(line_1.split('\n')[0])
-            factorize(num_to_validate)
-            line_1 = file.readline()
+        while line != "":
+            number_to_check = int(line.split('\n')[0])
+            factorize(number_to_check)
+            line = file.readline()
 except:
     pass
