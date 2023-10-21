@@ -42,7 +42,7 @@ else
 	do
 
 		result=$(factor "$i")
-		check_factor $result
+		validate_factor $result
 
 	done < "$1"
 fi
